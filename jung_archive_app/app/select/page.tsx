@@ -49,6 +49,14 @@ export default function SelectionPage() {
                         {/* RIGHT: PORTAL CARDS & NEWSLETTER */}
                         <div className="space-y-16">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <Link href="/library" className="group relative p-8 border border-white/5 hover:border-amber-500/30 bg-white/[0.02] hover:bg-amber-900/10 transition-all rounded-xl col-span-2">
+                                    <span className="text-4xl mb-6 block group-hover:scale-110 transition-transform">🏛️</span>
+                                    <h5 className="font-cinzel font-bold text-white mb-3 text-lg text-amber-500/60 group-hover:text-amber-500 transition-colors">Đại Sảnh Thư Viện</h5>
+                                    <p className="text-xs text-stone-500 leading-relaxed font-light italic">
+                                        Truy cập toàn bộ 113 tác phẩm, tài liệu gốc và hồ sơ toàn thư với công cụ tìm kiếm chuẩn xác.
+                                    </p>
+                                </Link>
+
                                 <Link href="/mirror" className="group relative p-8 border border-white/5 hover:border-white/20 bg-white/[0.02] hover:bg-white/[0.05] transition-all rounded-xl">
                                     <span className="text-4xl mb-6 block group-hover:scale-110 transition-transform">🪞</span>
                                     <h5 className="font-cinzel font-bold text-white mb-3 text-lg text-amber-500/60 group-hover:text-amber-500 transition-colors">Gương soi Bóng</h5>
