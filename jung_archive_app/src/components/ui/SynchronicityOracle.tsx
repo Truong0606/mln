@@ -97,7 +97,7 @@ export default function SynchronicityOracle() {
                                     <div className="absolute inset-10 bg-purple-500/10 blur-xl rounded-full animate-pulse" />
                                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl text-purple-500 animate-ping">✦</div>
                                 </div>
-                                <span className="text-xs tracking-[0.5em] text-purple-300/40 uppercase animate-pulse">Summoning Archetype...</span>
+                                <span className="text-xs tracking-[0.5em] text-purple-300/40 uppercase animate-pulse">Đang triệu hồi Cổ mẫu...</span>
                             </motion.div>
                         )}
 
@@ -135,7 +135,7 @@ export default function SynchronicityOracle() {
                                         onClick={handleRoll}
                                         className="absolute bottom-4 right-6 text-[10px] text-white/20 hover:text-white uppercase tracking-widest transition-colors flex items-center gap-2 group"
                                     >
-                                        <span className="group-hover:-rotate-180 transition-transform duration-500">↻</span> Re-roll
+                                        <span className="group-hover:-rotate-180 transition-transform duration-500">↻</span> Gieo lại
                                     </button>
                                 </div>
                             </motion.div>

@@ -51,7 +51,7 @@ function TeaserMontage({ isActive, pillar }: { isActive: boolean, pillar: any })
     const groupRef = useRef<THREE.Group>(null);
     const elements = useMemo(() => {
         if (pillar) return pillar.teaserKeywords || [];
-        return ["Collective Unconscious", "The Self", "Archetypes", "Alchemical Soul", "Mundus Imaginalis", "Archive"];
+        return ["Vô thức tập thể", "Cái Tôi", "Cổ mẫu", "Linh hồn Giả kim", "Mundus Imaginalis", "Lưu trữ"];
     }, [pillar]);
 
     useFrame((state, delta) => {
@@ -668,54 +668,54 @@ const MandalaLotus = ({ isHovered }: any) => {
 
 const PILLARS = [
     {
-        id: 'biography', name: 'BIOGRAPHY', Object: BioFragment, baseScale: 1.8, color: "#bb00ff",
+        id: 'biography', name: 'TIỂU SỬ', Object: BioFragment, baseScale: 1.8, color: "#bb00ff",
         transitionMsg: "CHƯƠNG I: CUỘC ĐỜI & DI SẢN", transitionColor: "#0a0015",
         teaserKeywords: ["Zurich 1875", "Tháp Bollingen", "Ký ức", "Toni Wolff", "Emma Jung"]
     },
     {
-        id: 'concepts', name: 'CONCEPTS', Object: LogicCore, baseScale: 2.1, color: "#00ffff",
+        id: 'concepts', name: 'KHÁI NIỆM', Object: LogicCore, baseScale: 2.1, color: "#00ffff",
         transitionMsg: "CHƯƠNG II: CẤU TRÚC TÂM LÝ", transitionColor: "#000808",
-        teaserKeywords: ["Archetypes", "The Shadow", "Persona", "Anima", "Animus"]
+        teaserKeywords: ["Cổ mẫu", "Bóng tối", "Mặt nạ", "Anima", "Animus"]
     },
     {
-        id: 'red_book', name: 'RED BOOK', Object: RedBookLegacy, baseScale: 1.7, color: "#ff0000",
+        id: 'red_book', name: 'SÁCH ĐỎ', Object: RedBookLegacy, baseScale: 1.7, color: "#ff0000",
         transitionMsg: "CHƯƠNG III: KHẢI HUYỀN NỘI TÂM", transitionColor: "#150000",
-        teaserKeywords: ["Liber Novus", "Philemon", "Desert", "Dialogue", "Red Rite"]
+        teaserKeywords: ["Liber Novus", "Philemon", "Sa mạc", "Đối thoại", "Nghi lễ đỏ"]
     },
     {
-        id: 'alchemy', name: 'ALCHEMY', Object: AlchemicalCrucible, baseScale: 1.8, color: "#00ff44",
+        id: 'alchemy', name: 'GIẢ KIM', Object: AlchemicalCrucible, baseScale: 1.8, color: "#00ff44",
         transitionMsg: "CHƯƠNG IV: GIẢ KIM THUẬT", transitionColor: "#000a03",
-        teaserKeywords: ["Solutio", "Lapis", "Lead to Gold", "Union", "Spirit Vessel"]
+        teaserKeywords: ["Solutio", "Hòn đá triết gia", "Chì thành Vàng", "Hợp nhất", "Bình chứa Linh hồn"]
     },
     {
-        id: 'practice', name: 'PRACTICE', Object: MandalaLotus, baseScale: 2.3, color: "#ff00ff",
+        id: 'practice', name: 'THỰC HÀNH', Object: MandalaLotus, baseScale: 2.3, color: "#ff00ff",
         transitionMsg: "CHƯƠNG V: PHƯƠNG PHÁP LUẬN", transitionColor: "#0a000a",
-        teaserKeywords: ["Active Imagination", "Dream Analysis", "Mandala", "Incantations"]
+        teaserKeywords: ["Tưởng tượng tích cực", "Giải mã giấc mơ", "Mandala", "Thần chú"]
     },
     {
-        id: 'symbols', name: 'SYMBOLS', Object: Runestone, baseScale: 1.4, color: "#ffd700",
+        id: 'symbols', name: 'BIỂU TƯỢNG', Object: Runestone, baseScale: 1.4, color: "#ffd700",
         transitionMsg: "CHƯƠNG VI: BIỂU TƯỢNG HỌC", transitionColor: "#0a0800",
-        teaserKeywords: ["Ouroboros", "The Circle", "Cross", "Runes", "Sacred Geometry"]
+        teaserKeywords: ["Ouroboros", "Vòng tròn", "Thập tự", "Cổ ngữ", "Hình học thiêng"]
     },
     {
-        id: 'spirit', name: 'SPIRIT', Object: SpiritGlitch, baseScale: 2.2, color: "#ffffff",
+        id: 'spirit', name: 'TÂM LINH', Object: SpiritGlitch, baseScale: 2.2, color: "#ffffff",
         transitionMsg: "CHƯƠNG VII: CHIỀU KÍCH TÂM LINH", transitionColor: "#080808",
-        teaserKeywords: ["Collective Unconscious", "Synchronicity", "The Self", "Abundance"]
+        teaserKeywords: ["Vô thức tập thể", "Đồng hiện", "Cái Tôi", "Sự sung túc"]
     },
     {
-        id: 'legacy', name: 'LEGACY', Object: CrystalArbor, baseScale: 1.2, color: "#aaff00",
+        id: 'legacy', name: 'DI SẢN', Object: CrystalArbor, baseScale: 1.2, color: "#aaff00",
         transitionMsg: "CHƯƠNG VIII: TIẾP NỐI THẾ HỆ", transitionColor: "#050a00",
-        teaserKeywords: ["Analytical Psychology", "MBTI", "Joseph Campbell", "Roots"]
+        teaserKeywords: ["Tâm lý học Phân tích", "MBTI", "Joseph Campbell", "Cội rễ"]
     },
     {
-        id: 'cosmos', name: 'COSMOS', Object: CosmosSingularity, baseScale: 1.3, color: "#ffffff",
+        id: 'cosmos', name: 'VŨ TRỤ', Object: CosmosSingularity, baseScale: 1.3, color: "#ffffff",
         transitionMsg: "CHƯƠNG IX: VŨ TRỤ QUAN", transitionColor: "#000000",
-        teaserKeywords: ["Unus Mundus", "Psychoid", "Event Horizon", "Singularity"]
+        teaserKeywords: ["Unus Mundus", "Tâm thể", "Chân trời sự kiện", "Điểm kỳ dị"]
     },
     {
-        id: 'encounters', name: 'ENCOUNTERS', Object: SynapticGrid, baseScale: 1.6, color: "#0044ff",
+        id: 'encounters', name: 'GẶP GỠ', Object: SynapticGrid, baseScale: 1.6, color: "#0044ff",
         transitionMsg: "CHƯƠNG X: NHỮNG CUỘC GẶP GỠ", transitionColor: "#00040a",
-        teaserKeywords: ["Sigmund Freud", "Wolfgang Pauli", "Friendship", "Fate"]
+        teaserKeywords: ["Sigmund Freud", "Wolfgang Pauli", "Tình bạn", "Định mệnh"]
     },
 ];
 
@@ -1059,7 +1059,7 @@ export default function MandalaWithObjects() {
                             className="text-white font-light tracking-[2em] opacity-60 text-xs uppercase px-4 text-center"
                             style={{ textShadow: `0 0 20px ${selectedPillarIndex !== null ? PILLARS[selectedPillarIndex].color : '#ffffff'}` }}
                         >
-                            {selectedPillarIndex !== null ? PILLARS[selectedPillarIndex].transitionMsg : "ENTER THE UNCONSCIOUS"}
+                            {selectedPillarIndex !== null ? PILLARS[selectedPillarIndex].transitionMsg : "BƯỚC VÀO VÔ THỨC"}
                         </div>
                     </motion.div>
                 )}
@@ -1080,7 +1080,7 @@ export default function MandalaWithObjects() {
                     </h1>
                     <div className="h-[1px] w-64 bg-gradient-to-r from-transparent via-[#ffd700] to-transparent opacity-60 mt-4 mx-auto" />
                     <p className="mt-6 text-sm tracking-[0.8em] text-[#ffaa00] opacity-80 uppercase font-light">
-                        Mundus Imaginalis • Alchemical Soul
+                        Mundus Imaginalis • Linh Hồn Giả Kim
                     </p>
                 </div>
             </motion.div>
