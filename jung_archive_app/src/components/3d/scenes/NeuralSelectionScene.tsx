@@ -48,7 +48,7 @@ function PoolTable() {
 
     // Rail Sights
     const sights = useMemo(() => {
-        const s = [];
+        const s: Array<[number, number]> = [];
         [-17, 0, 17].forEach(z => s.push([-22, z], [22, z]));
         [-10, 0, 10].forEach(x => s.push([x, -37], [x, 37]));
         return s;
@@ -163,7 +163,7 @@ function CueStick({ active, targetPos, ballPos }: { active: boolean, targetPos: 
             // Pull back and strike sequence
             // Phase 1: Pull back (0-0.3s)
             // Phase 2: Strike (0.3-0.5s)
-            const phase = state.clock.active ? (state.clock.elapsedTime % 1) : 0; // Simplified for logic
+            const phase = state.clock.elapsedTime % 1; // Simplified for logic
             // We use state.clock or a local timer. Let's use a simpler lerp-based approach in BilliardBall instead for precision.
         }
     });

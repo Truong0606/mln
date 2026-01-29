@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { notFound } from 'next/navigation';
-import { getAllArticlesFlat } from '../../../lib/content-config';
-import ArchiveReader from '../../../components/library/ArchiveReader';
+import { getAllArticlesFlat } from '../../../../lib/content-config';
+import ArchiveReader from '../../../../components/library/ArchiveReader';
 
 export async function generateStaticParams() {
     const articles = getAllArticlesFlat();
@@ -40,10 +40,11 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
         // Try archive directory if still empty
         if (!content) {
-            const archiveDir = path.resolve(process.cwd(), '../JUNG_ARCHIVE_FINAL', article.sourceFile);
-            if (fs.existsSync(archiveDir)) {
-                content = fs.readFileSync(archiveDir, 'utf8');
-            }
+            const syncedArchiveDir = path.resolve(process.cwd(), 'content', '__archives__', article.sourceFile);
+            const siblingArchiveDir = path.resolve(process.cwd(), '../JUNG_ARCHIVE_FINAL', article.sourceFile);
+            const archivePath = fs.existsSync(syncedArchiveDir) ? syncedArchiveDir : siblingArchiveDir;
+
+            if (fs.existsSync(archivePath)) content = fs.readFileSync(archivePath, 'utf8');
         }
     }
 

@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Link from "next/link";
-import { PillarConfig } from "@/lib/content-config";
+import type { PillarConfig } from "@/lib/pillar-constants";
 import { useEffect, useState, useRef } from "react";
 
 interface ArticleLayoutProps {

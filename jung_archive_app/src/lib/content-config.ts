@@ -7,8 +7,12 @@ import { ArticleConfig } from './types';
 
 // Define the content directories
 const contentDirectory = path.join(process.cwd(), 'content');
-// Assuming JUNG_ARCHIVE_FINAL is a sibling of jung_archive_app
-const archivesDirectory = path.resolve(process.cwd(), '../JUNG_ARCHIVE_FINAL');
+// Archive source directory (prefer local synced copy for serverless runtimes like Vercel)
+const syncedArchivesDirectory = path.join(contentDirectory, '__archives__');
+const siblingArchivesDirectory = path.resolve(process.cwd(), '../JUNG_ARCHIVE_FINAL');
+const archivesDirectory = fs.existsSync(syncedArchivesDirectory)
+    ? syncedArchivesDirectory
+    : siblingArchivesDirectory;
 
 // Helper to map filename to Pillar ID
 function classifyPillar(filename: string, sourceDir: string): string {
@@ -27,8 +31,12 @@ function classifyPillar(filename: string, sourceDir: string): string {
         return 'khai-niem'; // Default
     }
 
-    // If it's from the archives directory
-    if (sourceDir === archivesDirectory || sourceDir.includes('JUNG_ARCHIVE_FINAL')) {
+    // If it's from the archives directory (either sibling dir in dev, or synced copy in prod)
+    if (
+        sourceDir === archivesDirectory ||
+        sourceDir.includes('JUNG_ARCHIVE_FINAL') ||
+        sourceDir.includes('__archives__')
+    ) {
         // Vietnamese Core Series
         if (filename.startsWith('vn_')) return 'vietnamese_core';
 

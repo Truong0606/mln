@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import SynchronicityOracle from "@/components/ui/SynchronicityOracle";
+import SynchronicityOracle from "@/components/ui/features/SynchronicityOracle";
 import CustomCursor from "@/components/ui/CustomCursor";
 
 export default function OraclePage() {

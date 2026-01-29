@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# generated content (synced from ../JUNG_ARCHIVE_FINAL during prebuild)
+/content/__archives__/
+
 # production
 /build
 

@@ -62,7 +62,7 @@ export default function CosmicTreeBackground({ color = "#00ffff" }: { color?: st
         <group>
             {/* THE GALAXY "LEAVES" */}
             <group position={[0, 10, 0]}>
-                <GalaxyBackground color={color} />
+                <GalaxyBackground />
             </group>
 
             {/* THE NEURAL TRUNK */}
