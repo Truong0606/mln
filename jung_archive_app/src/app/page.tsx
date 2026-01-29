@@ -61,40 +61,69 @@ export default function Home() {
       >
         {/* HERO TITLE */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
+          initial={{ opacity: 0, scale: 0.9, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1.5, ease: [0.19, 1.0, 0.22, 1.0] }} // Cinematic ease
           className="flex flex-col items-center z-20"
         >
-          <span className="font-cinzel text-xs tracking-[0.8em] text-[#ffd700] mb-6 font-bold uppercase drop-shadow-lg">
+          <motion.span
+            initial={{ opacity: 0, letterSpacing: "1em" }}
+            animate={{ opacity: 1, letterSpacing: "0.8em" }}
+            transition={{ duration: 2, delay: 0.5 }}
+            className="font-cinzel text-xs md:text-sm text-[#ffd700] mb-6 font-medium uppercase drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]"
+          >
             Mundus Imaginalis
-          </span>
-          <h1 className="font-cinzel text-6xl md:text-8xl lg:text-[100px] font-bold text-white tracking-tight leading-none text-center drop-shadow-2xl">
-            THE JUNG<br />
-            <span className="text-[#ffd700]">ARCHIVE</span>
+          </motion.span>
+
+          <h1 className="font-cinzel text-6xl md:text-8xl lg:text-[120px] font-bold text-white tracking-tighter leading-none text-center drop-shadow-2xl relative z-10"
+            style={{ textShadow: "0 10px 30px rgba(0,0,0,0.5)" }}>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white to-[#a8a8a8]">THE JUNG</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#ffd700] via-[#fdb931] to-[#9e7f0e] filter drop-shadow-[0_0_20px_rgba(255,215,0,0.4)] pb-4">
+              ARCHIVE
+            </span>
           </h1>
-          <div className="w-24 h-[2px] bg-[#ffd700] mt-8 mb-8 opacity-50" />
-          <p className="font-playfair text-lg italic text-white/80 tracking-widest">
+
+          <motion.div
+            initial={{ width: 0, opacity: 0 }}
+            animate={{ width: "100px", opacity: 0.7 }}
+            transition={{ duration: 1.5, delay: 1 }}
+            className="h-[1px] bg-gradient-to-r from-transparent via-[#ffd700] to-transparent mt-4 mb-8"
+          />
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.8 }}
+            transition={{ duration: 1, delay: 1.2 }}
+            className="font-playfair text-lg md:text-xl italic text-[#ececec] tracking-widest mix-blend-screen"
+          >
             A Digital Grimoire of the Unconscious
-          </p>
+          </motion.p>
         </motion.div>
 
         {/* BUTTON */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, delay: 1.5 }}
-          className="pointer-events-auto"
+          transition={{ duration: 1, delay: 1.8, ease: "easeOut" }}
+          className="pointer-events-auto mt-20"
         >
           <button
             onClick={enterVoid}
-            className="group relative px-12 py-5 overflow-hidden transition-all duration-500 hover:scale-105"
+            className="group relative px-16 py-6 overflow-hidden transition-all duration-500"
           >
-            <div className="absolute inset-0 border border-white/20 opacity-30 group-hover:opacity-100 transition-opacity duration-500 rounded-sm" />
-            <div className="absolute inset-1 border border-[#ffd700]/30 opacity-10 group-hover:opacity-50 transition-opacity duration-500 rounded-sm scale-95" />
+            {/* Animated Border */}
+            <div className="absolute inset-0 border border-[#ffd700]/30 group-hover:border-[#ffd700] transition-colors duration-500 rounded-sm" />
 
-            <span className="font-cinzel text-sm tracking-[0.4em] text-white font-bold uppercase relative z-10 group-hover:text-[#ffd700] transition-colors">
-              BƯỚC VÀO VÔ THỨC
+            {/* Inner Glow Fill */}
+            <div className="absolute inset-0 bg-[#ffd700] opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
+
+            {/* Dynamic Corners */}
+            <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#ffd700] opacity-50 group-hover:w-4 group-hover:h-4 transition-all duration-300" />
+            <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#ffd700] opacity-50 group-hover:w-4 group-hover:h-4 transition-all duration-300" />
+
+            {/* Text Content */}
+            <span className="font-cinzel text-sm tracking-[0.4em] text-white group-hover:text-[#ffd700] font-bold uppercase relative z-10 transition-all duration-500 group-hover:drop-shadow-[0_0_8px_rgba(255,215,0,0.8)]">
+              Bước vào Vô thức
             </span>
           </button>
         </motion.div>

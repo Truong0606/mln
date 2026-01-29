@@ -215,6 +215,125 @@ const BioV4 = () => (
     </div>
 );
 
+// --- 6. PRACTICE: "THE INNER LOTUS" (Hoa Sen Nở) ---
+const PracticeV4 = () => (
+    <div className="absolute inset-0 bg-[#1a051a] overflow-hidden flex items-center justify-center">
+        <motion.div
+            initial={{ scale: 0, rotate: 0 }}
+            animate={{ scale: [0, 1.5, 3], rotate: 180 }}
+            transition={{ duration: 3.5, ease: "easeInOut" }}
+            className="absolute w-[800px] h-[800px] rounded-full opacity-60 mix-blend-screen"
+            style={{
+                background: "conic-gradient(from 0deg, #ff00ff, #000000, #ff00ff, #000000, #ff00ff)"
+            }}
+        />
+        <motion.div
+            initial={{ scale: 0, rotate: 90 }}
+            animate={{ scale: [0, 1.2, 2.5], rotate: -180 }}
+            transition={{ duration: 3.5, ease: "easeInOut", delay: 0.2 }}
+            className="absolute w-[600px] h-[600px] rounded-full opacity-80 mix-blend-screen"
+            style={{
+                background: "conic-gradient(from 0deg, #50c878, #000000, #50c878, #000000, #50c878)"
+            }}
+        />
+        <DecodedText text="PRACTICE" color="#ff00ff" delay={1.0} />
+    </div>
+);
+
+// --- 7. SYMBOLS: "THE CIPHER STREAM" (Dòng Chảy Ký Tự) ---
+const SymbolsV4 = () => (
+    <div className="absolute inset-0 bg-[#0a0510] overflow-hidden flex items-center justify-center">
+        {/* Runic Rain */}
+        {[...Array(20)].map((_, i) => (
+            <motion.div
+                key={i}
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: "120vh", opacity: [0, 1, 0] }}
+                transition={{
+                    duration: Math.random() * 2 + 1,
+                    repeat: Infinity,
+                    delay: Math.random() * 2,
+                    ease: "linear"
+                }}
+                className="absolute text-[#ffd700] font-mono text-2xl writing-vertical-rl"
+                style={{ left: `${Math.random() * 100}%` }}
+            >
+                {String.fromCharCode(0x16A0 + Math.random() * 80)}
+            </motion.div>
+        ))}
+        <DecodedText text="SYMBOLS" color="#6a0dad" delay={0.5} />
+    </div>
+);
+
+// --- 8. SPIRIT: "THE ETHEREAL AURA" (Hào Quang) ---
+const SpiritV4 = () => (
+    <div className="absolute inset-0 bg-white flex items-center justify-center overflow-hidden">
+        <motion.div
+            initial={{ scale: 0.5, opacity: 0, filter: "blur(20px)" }}
+            animate={{ scale: 20, opacity: 1, filter: "blur(0px)" }}
+            transition={{ duration: 1.5 }}
+            className="absolute inset-0 bg-[#FF8C00]"
+        />
+        <motion.div
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 0 }}
+            transition={{ duration: 2.5, ease: "easeOut" }}
+            className="absolute w-[500px] h-[500px] bg-white rounded-full blur-3xl z-10"
+        />
+        <div className="z-20 mix-blend-difference">
+            <DecodedText text="SPIRIT" color="#ffffff" delay={0.2} />
+        </div>
+    </div>
+);
+
+// --- 9. LEGACY: "THE TIMELINE" (Dòng Thời Gian) ---
+const LegacyV4 = () => (
+    <div className="absolute inset-0 bg-[#051005] overflow-hidden flex items-center justify-center">
+        {/* Expanding Lines */}
+        {[...Array(10)].map((_, i) => (
+            <motion.div
+                key={i}
+                initial={{ width: 0 }}
+                animate={{ width: "100vw" }}
+                transition={{ duration: 0.8, delay: i * 0.1, ease: 'easeOut' }}
+                className="absolute h-[2px] bg-[#ec4899] left-0 shadow-[0_0_10px_#ec4899]"
+                style={{ top: `${10 + i * 8}%` }}
+            />
+        ))}
+        <motion.div
+            initial={{ height: 0 }}
+            animate={{ height: "100vh" }}
+            transition={{ duration: 1.0, delay: 0.5 }}
+            className="absolute w-[2px] bg-white left-1/2 top-0"
+        />
+        <DecodedText text="LEGACY" color="#ec4899" delay={1.0} />
+    </div>
+);
+
+// --- 10. ENCOUNTERS: "THE NEURAL WEB" (Mạng Lưới Kết Nối) ---
+const EncountersV4 = () => (
+    <div className="absolute inset-0 bg-[#000510] overflow-hidden flex items-center justify-center">
+        {/* Connection Nodes */}
+        {[...Array(15)].map((_, i) => (
+            <motion.div
+                key={i}
+                initial={{ scale: 0 }}
+                animate={{ scale: [0, 1.5, 1] }}
+                transition={{ duration: 0.5, delay: Math.random() * 1.5 }}
+                className="absolute w-4 h-4 bg-[#40e0d0] rounded-full shadow-[0_0_15px_#40e0d0]"
+                style={{
+                    top: `${Math.random() * 100}%`,
+                    left: `${Math.random() * 100}%`
+                }}
+            />
+        ))}
+        {/* Connecting Lines (Simulated Grid) */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(64,224,208,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(64,224,208,0.1)_1px,transparent_1px)] bg-[size:100px_100px]" />
+
+        <DecodedText text="ENCOUNTERS" color="#40e0d0" delay={0.8} />
+    </div>
+);
+
 // --- GENERIC FALLBACK FOR OTHERS (With Scanlines) ---
 const GenericV4 = ({ id, color }: { id: string, color: string }) => (
     <div className="absolute inset-0 bg-black flex items-center justify-center overflow-hidden">
@@ -263,7 +382,12 @@ export default function ThematicEntrance({ pillarId, color }: { pillarId: string
                             (pillarId === 'sach-do' || pillarId === 'red_book' || pillarId === 'redbook') ? <RedBookV4 /> :
                                 (pillarId === 'gia-kim' || pillarId === 'alchemy') ? <AlchemyV4 /> :
                                     (pillarId === 'vu-tru' || pillarId === 'cosmos') ? <CosmosV4 /> :
-                                        <GenericV4 id={pillarId} color={color} />}
+                                        (pillarId === 'thuc-hanh' || pillarId === 'practice') ? <PracticeV4 /> :
+                                            (pillarId === 'bieu-tuong' || pillarId === 'symbols') ? <SymbolsV4 /> :
+                                                (pillarId === 'tam-linh' || pillarId === 'spirit') ? <SpiritV4 /> :
+                                                    (pillarId === 'di-san' || pillarId === 'legacy') ? <LegacyV4 /> :
+                                                        (pillarId === 'gap-go' || pillarId === 'encounters') ? <EncountersV4 /> :
+                                                            <GenericV4 id={pillarId} color={color} />}
                 </motion.div>
             )}
         </AnimatePresence>

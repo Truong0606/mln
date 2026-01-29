@@ -1,166 +1,140 @@
-# 🏛️ THE JUNG ARCHIVE - Kho Lưu Trữ Tâm Thức
+# 🔮 The Jung Archive: A Digital Grimoire (Hồ Sơ C.G. Jung)
 
-> *"Một Grimoire Kỹ Thuật Số về Vô Thức Tập Thể"*
+> *"Who works with images work with the soul."* — C.G. Jung
 
----
+**The Jung Archive** là một trải nghiệm web tương tác (Interactive Web Experience) kết hợp giữa nghệ thuật, tâm lý học và công nghệ 3D (WebGL). Dự án tái hiện hành trình khám phá Tâm thức (Unconscious) thông qua các khái niệm cốt lõi của **Carl Gustav Jung** như *Bóng âm (Shadow)*, *Cái Tôi (Ego)*, *Mandala*, và *Giả kim thuật*.
 
-## 📜 Tổng Quan Dự Án
+Dự án không chỉ là một blog đọc bài bình thường, mà là một "thư viện số sống động" (Digital Grimoire), nơi người dùng bước vào một không gian 3D huyền bí, điều hướng qua các tầng kiến thức bằng trực giác và âm thanh.
 
-**The Jung Archive** là một trải nghiệm web điện ảnh (Cinematic Web Experience) được thiết kế để khám phá tư tưởng của Carl Gustav Jung qua 120 bài viết được phân loại thành 10 trụ cột chính. Dự án kết hợp giữa tâm lý học sâu, nghệ thuật 3D, và thiết kế UI/UX cao cấp để tạo ra một "thư viện số" huyền bí và hấp dẫn.
-
----
-
-## ✨ Tính Năng Chính
-
-### 🌀 **Phase 1: The Mandala (Cổng Vào)**
-- **3D Mandala Selector**: 10 vật thể 3D xoay quanh trung tâm, mỗi vật thể đại diện cho một trụ cột tư tưởng
-- **Diving Camera Effect**: Hiệu ứng zoom điện ảnh khi chọn một trụ cột
-- **Dynamic Lighting**: Ánh sáng thay đổi theo màu sắc của từng trụ cột
-
-### 📚 **Phase 2: The Pillar Pages (Thư Viện Nguyên Mẫu)**
-- **Dynamic Routing**: Tự động tạo trang cho 10 trụ cột từ dữ liệu file system
-- **3D Artifact Display**: Hiển thị vật thể 3D đặc trưng cho mỗi trụ cột
-- **Article Grid**: Danh sách bài viết được sắp xếp theo thứ tự với hiệu ứng hover cao cấp
-
-### 🌌 **Phase 3: The Labyrinth (Mê Cung Nội Dung)**
-- **Masonry Grid**: Lưới bài viết động với 120+ hồ sơ
-- **Search & Filter**: Tìm kiếm theo từ khóa và lọc theo trụ cột
-- **Ouroboros Progress**: Thanh tiến trình hình con rắn cắn đuôi theo dõi quá trình đọc
-- **Marginalia**: Ghi chú lề trang trí với trích dẫn và metadata
-
-### 🧪 **Phase 4: The Alchemical Lab (Phòng Thí Nghiệm)**
-- **Active Imagination Engine**: Trò chuyện với Philemon (nhân vật từ Sách Đỏ)
-- **Dream Journal**: Phân tích biểu tượng giấc mơ theo tâm lý học Jungian
-- **Shadow Mirror**: Công cụ đối diện với bóng tối (Coming Soon)
-- **Synchronicity Oracle**: Xúc xắc đồng hiện (Coming Soon)
+![Project Screenshot](public/thumbnail.png) *(Tự thêm ảnh demo vào đây)*
 
 ---
 
-## 🗂️ Cấu Trúc Nội Dung (120 Bài Viết)
+## ✨ Tính Năng Nổi Bật (Key Features)
 
-### 10 Trụ Cột Chính:
+### 1. Trải Nghiệm 3D Immersive (React Three Fiber)
+- **Mandala Navigation**: Hệ thống điều hướng 3D xoay tròn, mỗi quả cầu (Sphere) đại diện cho một "Cột trụ" kiến thức (Archetypes, Shadow, Alchemy...).
+- **Cosmic Mind Scene**: Cảnh mở màn mô phỏng vũ trụ tâm thức với các neuron thần kinh rực sáng kết nối.
+- **Custom Shaders**: Hiệu ứng "Ink Reveal" (Mực loang trên giấy) và các hiệu ứng hạt (Particles) độc bản.
 
-1. **TIỂU SỬ & CUỘC ĐỜI** (Biography) - 12 bài
-2. **CẤU TRÚC TÂM THỨC** (Concepts) - 13 bài
-3. **SÁCH ĐỎ & THỊ KIẾN** (Red Book) - 12 bài
-4. **GIẢ KIM THUẬT** (Alchemy) - 13 bài
-5. **THỰC HÀNH & TRỊ LIỆU** (Practice) - 12 bài
-6. **BIỂU TƯỢNG HỌC** (Symbols) - 12 bài
-7. **TÂM LINH & TÔN GIÁO** (Spirit) - 12 bài
-8. **DI SẢN & TƯƠNG LAI** (Legacy) - 11 bài
-9. **VŨ TRỤ & ĐỒNG BỘ** (Cosmos) - 10 bài
-10. **QUAN HỆ & GẶP GỠ** (Encounters) - 13 bài
+### 2. Giao Diện "Tech-Mystic" (Cinematic UI)
+- **Cinematic Transitions**: Hiệu ứng chuyển cảnh "Warp Speed" khi đi sâu vào vô thức.
+- **Micro-interactions**: Nút bấm, hiệu ứng hover, trỏ chuột (Custom Cursor) được thiết kế theo phong cách ma thuật công nghệ cao.
+- **Responsive Layout**: Tối ưu hóa cho cả trải nghiệm máy tính và màn hình lớn.
 
----
-
-## 🚀 Cài Đặt & Chạy Dự Án
-
-### Yêu Cầu Hệ Thống
-- Node.js 18+ 
-- npm hoặc yarn
-
-### Cài Đặt Dependencies
-```bash
-npm install
-```
-
-### Chạy Development Server
-```bash
-npm run dev
-```
-
-Mở trình duyệt tại: [http://localhost:3000](http://localhost:3000)
-
-### Build Production
-```bash
-npm run build
-npm start
-```
+### 3. Chế Độ Đọc Chuyên Sâu (Deep Reading Mode)
+- **Ambient Atmosphere**: Video nền (Background Video) nhẹ nhàng kết hợp với âm thanh "Deep Hum" (Sound Engine) giúp tăng sự tập trung.
+- **Interactive Markdown**: Nội dung bài viết được render từ Markdown với typography được tinh chỉnh (Font Cinzel & Playfair Display).
+- **Ouroboros Progress**: Thanh tiến trình đọc bài cách điệu hình rắn cắn đuôi.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Công Nghệ Sử Dụng (Tech Stack)
 
-- **Framework**: Next.js 14 (App Router)
-- **3D Graphics**: Three.js, React Three Fiber, React Three Drei
-- **Animations**: Framer Motion
-- **Styling**: Tailwind CSS + Custom CSS
-- **Content**: Markdown (Gray Matter)
-- **Typography**: Cinzel (Serif), Inter (Sans-serif)
+Dự án được xây dựng trên nền tảng Web hiện đại, tối ưu hiệu năng đồ họa:
+
+- **Core**: [Next.js 15](https://nextjs.org/) (App Router), [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/).
+- **3D & Graphics**:
+    - [React Three Fiber](https://docs.pmnd.rs/react-three-fiber): Render Three.js trong React.
+    - [Drei](https://github.com/pmndrs/drei): Thư viện hỗ trợ cho R3F.
+    - [React Three Postprocessing](https://github.com/pmndrs/react-postprocessing): Hiệu ứng hậu kỳ (Bloom, Noise, Vignette).
+    - [Custom GLSL Shaders]: Viết tay các shader hiệu ứng đặc biệt.
+- **Styling & Animation**:
+    - [Tailwind CSS](https://tailwindcss.com/): Utility-first CSS.
+    - [Framer Motion](https://www.framer.com/motion/): Animation cho UI 2D.
+- **Content**:
+    - `gray-matter`, `remark`, `rehype`: Xử lý nội dung Markdown.
 
 ---
 
-## 📂 Cấu Trúc Thư Mục
+## 🚀 Hướng Dẫn Cài Đặt (Installation Guide)
+
+### Yêu cầu hệ thống
+- **Node.js**: Phiên bản 18.x hoặc mới hơn.
+- **Package Manager**: npm, yarn, hoặc pnpm.
+- **Trình duyệt**: Chrome/Edge/Firefox (Cần hỗ trợ WebGL tốt).
+
+### Các bước cài đặt
+
+1.  **Clone dự án về máy:**
+    ```bash
+    git clone https://github.com/your-username/jung-archive-app.git
+    cd jung-archive-app
+    ```
+
+2.  **Cài đặt `node_modules`:**
+    ```bash
+    npm install
+    # hoặc
+    yarn install
+    ```
+
+3.  **Tạo thư mục nội dung (Nếu chưa có):**
+    Hãy chắc chắn rằng thư mục `content/` ở gốc dự án có chứa các file `.md` với định dạng frontmatter đúng.
+    *Ví dụ cấu trúc file `content/shadow.md`:*
+    ```markdown
+    ---
+    title: "The Shadow"
+    description: "Khám phá mặt tối của tâm hồn."
+    date: "2024-01-29"
+    ---
+    Nội dung bài viết ở đây...
+    ```
+
+4.  **Chạy server phát triển (Development Mode):**
+    ```bash
+    npm run dev
+    ```
+    Truy cập `http://localhost:3000` (hoặc port hiển thị trên terminal) để xem kết quả.
+
+5.  **Build production (Tùy chọn):**
+    ```bash
+    npm run build
+    npm start
+    ```
+
+---
+
+## 📂 Cấu Trúc Dự Án (Project Structure)
 
 ```
 jung_archive_app/
-├── app/                      # Next.js App Router
-│   ├── page.tsx             # Trang chủ (Gateway)
-│   ├── select/              # Mandala Hub
-│   ├── library/             # Labyrinth Grid
-│   ├── pillar/[id]/         # Dynamic Pillar Pages
-│   └── globals.css          # Global Styles
-├── components/
-│   ├── 3d/                  # 3D Components (Mandala, Objects)
-│   ├── ui/                  # UI Components (Grid, Progress...)
-│   ├── reading/             # Reading Page Components
-│   └── PillarPageTemplate.tsx
-├── content/                 # 120 Markdown Articles
-├── lib/
-│   ├── content-config.ts    # Content Loading Logic
-│   ├── pillar-constants.ts  # Pillar Metadata
-│   └── pillar-objects.ts    # 3D Object Mapping
-└── public/                  # Static Assets
+├── public/                 # Tài nguyên tĩnh (video, images, fonts)
+│   ├── vid1.mp4           # Video Intro
+│   ├── vid3.mp4           # Video nền đọc bài
+│   └── textures/          # Texture cho 3D
+├── content/                # Các bài viết Markdown (Cơ sở dữ liệu)
+├── src/
+│   ├── app/                # Next.js App Router (Các trang)
+│   │   ├── page.tsx        # Trang chủ (Intro)
+│   │   ├── select/         # Trang chọn Cột trụ (Mandala)
+│   │   └── layout.tsx      # Layout chính
+│   ├── components/
+│   │   ├── 3d/             # Các component 3D (Quan trọng)
+│   │   │   ├── AlchemicalCanvas.tsx  # Shader nền
+│   │   │   ├── MandalaScene.tsx      # Cảnh chính
+│   │   │   └── ...
+│   │   ├── library/        # Component hiển thị bài đọc
+│   │   ├── ui/             # Component UI chung (Button, Cursor...)
+│   │   └── audio/          # Xử lý âm thanh
+│   └── lib/                # Các hàm tiện ích (đọc file md...)
+├── tailwind.config.ts      # Cấu hình Tailwind theme
+└── next.config.mjs         # Cấu hình Next.js
 ```
 
 ---
 
-## 🎨 Nguyên Tắc Thiết Kế
+## ⚠️ Lưu Ý & Troubleshooting
 
-1. **Cinematic**: Mọi chuyển cảnh đều mượt mà như phim điện ảnh
-2. **Alchemical**: Sử dụng màu vàng (#ffd700), đen (#000508) làm chủ đạo
-3. **Mysterious**: Tạo cảm giác bí ẩn, huyền bí qua hiệu ứng blur, glow
-4. **High-End**: Không dung túng cho thiết kế "tạm bợ" hay "placeholder"
-
----
-
-## 📊 Trạng Thái Dự Án
-
-✅ **100% Complete (Golden Master)**
-
-- [x] Phase 1: Mandala Selector với Diving Effect
-- [x] Phase 2: Dynamic Pillar Pages (10/10)
-- [x] Phase 3: Labyrinth Grid + Search/Filter + Ouroboros
-- [x] Phase 4: Active Imagination + Dream Journal
-- [x] 120 bài viết đã được xác thực và làm phong phú
-- [x] Localization tiếng Việt hoàn chỉnh
-- [x] Không sử dụng hình ảnh AI (theo yêu cầu)
+- **Lỗi WebGL**: Nếu màn hình đen hoặc không hiện vật thể 3D, hãy kiểm tra xem trình duyệt có bật Hardware Acceleration chưa.
+- **Hydration Mismatch**: Đôi khi xảy ra do sự khác biệt giữa Server và Client khi render ngày giờ hoặc số ngẫu nhiên. Refresh lại trang thường sẽ hết.
+- **Video không tự chạy**: Do chính sách Autoplay của trình duyệt. Hãy chắc chắn bạn đã tương tác (click) vào trang ít nhất 1 lần.
 
 ---
 
-## 🔮 Roadmap Tương Lai
+## 📜 Credits
 
-- [ ] Red Book Gallery (Carousel nghệ thuật)
-- [ ] Shadow Mirror (Webcam interaction)
-- [ ] Audio Ambience nâng cao (Binaural beats)
-- [ ] Mobile Optimization
-- [ ] Dark/Light Mode Toggle
+Created by **Antigravity Team** & **[Tên Bạn]**.
+Inspired by the works of C.G. Jung and the Red Book.
 
----
-
-## 📝 License
-
-© 2026 Jung Archive Protocol - Educational & Research Purpose
-
----
-
-## 🙏 Credits
-
-- **Concept & Design**: Inspired by Carl Jung's Liber Novus (The Red Book)
-- **3D Assets**: Custom-built with React Three Fiber
-- **Content**: Verified from Jung's original works and scholarly sources
-
----
-
-**"Ai nhìn ra bên ngoài, mơ mộng. Ai nhìn vào bên trong, thức tỉnh."**  
-— Carl Gustav Jung
+*“Vinh quang cho kẻ dám nhìn vào gương và không vỡ vụn.”*

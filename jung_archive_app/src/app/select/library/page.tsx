@@ -1,5 +1,5 @@
-import { getAllArticlesFlat } from '../../lib/content-config';
-import LibraryExplorer from '../../components/library/LibraryExplorer';
+import { getAllArticlesFlat } from '../../../lib/content-config';
+import LibraryExplorer from '../../../components/library/LibraryExplorer';
 
 export default function LibraryPage() {
     const articles = getAllArticlesFlat();

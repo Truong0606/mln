@@ -7,17 +7,19 @@ import rehypeRaw from 'rehype-raw';
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import FixedBackground from '@/components/ui/FixedBackground';
 
 export default function ArchiveReader({ content, metadata }: { content: string, metadata: any }) {
     const [activeId, setActiveId] = useState<string>('');
 
     // Extract headings for Table of Contents
-    // This is a simple regex extraction. For robust parsing we could use remark plugins, 
-    // but regex is faster for client-side TOC generation if we don't have the AST handy.
     const headings = content.match(/^##\s+(.+)$/gm)?.map(h => h.replace(/^##\s+/, '')) || [];
 
     return (
-        <div className="min-h-screen bg-[#0a0b10] text-[#ececec]">
+        <div className="min-h-screen bg-transparent text-[#ececec] relative">
+            {/* Background Video - Portaled to Body */}
+            <FixedBackground src="/vid3.mp4" />
+
             {/* Navigation Bar */}
             <div className="fixed top-0 left-0 w-full z-50 bg-[#0a0b10]/90 backdrop-blur border-b border-[#d4af37]/20 px-6 py-4 flex items-center justify-between">
                 <Link href="/select/library" className="flex items-center gap-2 text-[#d4af37] hover:text-[#f1c40f] transition-colors font-cinzel font-bold">
@@ -64,11 +66,11 @@ export default function ArchiveReader({ content, metadata }: { content: string, 
                             remarkPlugins={[remarkGfm]}
                             rehypePlugins={[rehypeRaw]}
                             components={{
-                                h2: ({ node, ...props }) => {
+                                h2: ({ node, ...props }: any) => {
                                     const id = props.children?.toString().toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '') || '';
                                     return <h2 id={id} className="scroll-mt-32" {...props} />
                                 }
-                            }}
+                            } as any}
                         >
                             {content}
                         </ReactMarkdown>

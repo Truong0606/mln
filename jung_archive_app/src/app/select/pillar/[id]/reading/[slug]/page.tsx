@@ -8,6 +8,7 @@ import { getPillars } from '@/lib/content-config';
 import { notFound } from 'next/navigation';
 import OuroborosProgress from '@/components/ui/OuroborosProgress';
 import CinematicHeader from '@/components/reading/CinematicHeader';
+import FixedBackground from '@/components/ui/FixedBackground';
 
 export const dynamic = 'force-dynamic';
 
@@ -41,9 +42,12 @@ export default async function ReadingPage({ params }: ReadingPageProps) {
     const displayTitle = data.title || slug.replace(/_/g, ' ').toUpperCase();
 
     return (
-        <div className="min-h-screen bg-[#000508] text-white selection:bg-amber-500 selection:text-black font-light leading-relaxed">
+        <div className="min-h-screen bg-transparent text-white selection:bg-amber-500 selection:text-black font-light leading-relaxed relative overflow-hidden">
+            {/* Background Video Layer - Portaled to Body to avoid Transform Scale issues */}
+            <FixedBackground src="/vid3.mp4" />
+
             {/* Immersive Background Elements */}
-            <div className="fixed inset-0 pointer-events-none opacity-20 z-0">
+            <div className="fixed inset-0 pointer-events-none opacity-20 z-0 mix-blend-screen">
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-500 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2" />
                 <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-amber-500 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2" />
             </div>

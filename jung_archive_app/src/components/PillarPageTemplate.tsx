@@ -7,6 +7,8 @@ import { EffectComposer, Bloom, ChromaticAberration, Vignette } from '@react-thr
 import * as THREE from 'three';
 import ThematicEntrance from './transitions/ThematicEntrance';
 
+import MeteorEffect from '../components/ui/MeteorEffect';
+
 interface PillarPageProps {
     pillar: {
         id: string;
@@ -28,7 +30,8 @@ export default function PillarPageTemplate({ pillar, articles }: PillarPageProps
     const ObjectComponent = pillar.Object;
 
     return (
-        <div className="min-h-screen bg-[#000508] text-white selection:bg-[#ffd700] selection:text-black overflow-x-hidden" suppressHydrationWarning>
+        <div className="min-h-screen text-white selection:bg-[#ffd700] selection:text-black overflow-x-hidden" suppressHydrationWarning>
+            <MeteorEffect />
             <ThematicEntrance key={pillar.id} pillarId={pillar.id} color={pillar.color} />
 
             {/* Cinematic Background - Subtle Alchemical Glow */}

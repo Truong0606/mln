@@ -50,8 +50,23 @@ export default function SoundEngine({ active }: { active: boolean }) {
         }
 
         return () => {
-            // We don't necessarily want to kill the audio on every re-render, 
-            // but we might want to shut it down if the component unmounts for real.
+            if (audioCtx.current) {
+                const ctx = audioCtx.current;
+                const gain = gainNode.current;
+
+                // Ramp down before closing if possible, but for unmount we must be quick
+                if (gain) {
+                    gain.gain.cancelScheduledValues(ctx.currentTime);
+                    gain.gain.setValueAtTime(gain.gain.value, ctx.currentTime);
+                    gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.5);
+                }
+
+                // Close context after a short delay to allow fade out, or just close immediate if unmounting?
+                // For safety vs memory leaks, closing is best.
+                setTimeout(() => {
+                    ctx.close();
+                }, 550);
+            }
         };
     }, [active]);
 

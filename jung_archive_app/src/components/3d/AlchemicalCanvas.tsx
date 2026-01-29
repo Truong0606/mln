@@ -89,20 +89,16 @@ const InkRevealShaderMaterial = shaderMaterial(
     `
 );
 
-// Register the shader material
-extend({ InkRevealShaderMaterial });
+// Registering via extend is removed to avoid TS conflicts
+// extend({ InkRevealShaderMaterial });
 
-// Type declaration for the custom shader material
-declare global {
-    namespace JSX {
-        interface IntrinsicElements {
-            inkRevealShaderMaterial: any;
-        }
-    }
-}
+// Global type augmentation removed in favor of <primitive />
 
 function ShaderPlane() {
     const materialRef = useRef<any>(null);
+
+    // Create static instance to pass to primitive
+    const shaderInstance = useMemo(() => new InkRevealShaderMaterial(), []);
 
     useFrame(({ clock, pointer, viewport }) => {
         if (materialRef.current) {
@@ -118,7 +114,12 @@ function ShaderPlane() {
     return (
         <mesh scale={[20, 10, 1]}> {/* Large plane to cover screen */}
             <planeGeometry args={[1, 1, 128, 128]} />
-            <inkRevealShaderMaterial ref={materialRef} transparent />
+            <primitive
+                object={shaderInstance}
+                ref={materialRef}
+                attach="material"
+                transparent
+            />
         </mesh>
     );
 }

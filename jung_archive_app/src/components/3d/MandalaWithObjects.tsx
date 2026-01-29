@@ -1078,8 +1078,8 @@ export default function MandalaWithObjects() {
 
                 <EffectComposer multisampling={0}>
                     <Bloom luminanceThreshold={isDiving ? 0.2 : 0.9} intensity={isDiving ? 1.2 : 0.4} mipmapBlur />
-                    {isDiving && <ChromaticAberration offset={[0.005, 0.005] as any} />}
-                    <Vignette eskil={false} offset={0.3} darkness={(isDiving ? 2.0 : 1.2) as any} />
+                    {isDiving ? <ChromaticAberration offset={[0.005, 0.005] as any} /> : <></>}
+                    <Vignette eskil={false} offset={0.3} darkness={isDiving ? 2.0 : 1.2} />
                 </EffectComposer>
             </Canvas>
 
