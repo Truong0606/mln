@@ -1,5 +1,6 @@
 import { getAllArticlesFlat } from '../../../lib/content-config';
 import LibraryExplorer from '../../../components/library/LibraryExplorer';
+import Footer from '../../../components/ui/Footer';
 
 export default function LibraryPage() {
     const articles = getAllArticlesFlat();
@@ -26,6 +27,8 @@ export default function LibraryPage() {
 
             {/* Main Content */}
             <LibraryExplorer articles={articles} />
+
+            <Footer />
         </div>
     );
 }
